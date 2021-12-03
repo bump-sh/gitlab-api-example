@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Comment pull request with API diff
-        uses: bump-sh/github-action@v1
+        uses: bump-sh/github-action@v1.0.6
         with:
           doc: gitlab
           token: ${{secrets.BUMP_TOKEN}}
