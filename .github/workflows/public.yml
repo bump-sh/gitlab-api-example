@@ -1,0 +1,22 @@
+name: Diff API documentation
+
+on:
+  pull_request_target:
+    branches:
+      - testing-pull-request-target
+
+jobs:
+  public-api-diff:
+    if: ${{ github.event_name == 'pull_request_target' }}
+    name: Check public API diff on Bump
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Comment pull request with API diff
+        uses: paulrbr/github-action@public-diff
+        with:
+          file: openapi.yaml
+          command: diff
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
