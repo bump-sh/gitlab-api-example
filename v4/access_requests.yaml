@@ -320,7 +320,7 @@ accessRequestsGroupsApprove:
           enum: [0, 10, 20, 30, 40, 50]
           default: 30
           type: integer
-    responses:      
+    responses:
       '401':
         description: Unauthorized operation
       '200':
@@ -336,6 +336,8 @@ accessRequestsGroupsApprove:
                 usename:
                   type: string
                 name:
+                  type: string
+                email:
                   type: string
                 state:
                   type: string
@@ -354,8 +356,12 @@ accessRequestsGroupsApprove:
 #/v4/groups/{id}/access_requests/{user_id}
 accessRequestsGroupsDeny:
   delete:
-    description: Denies a group access request for the given user
     summary: Denies a group access request for the given user
+    description: |
+      Denies a group access request for the given user
+
+      > info
+        Hello world, what's up?
     operationId: accessRequestsGroupsDeny_delete
     tags:
       - access_requests
