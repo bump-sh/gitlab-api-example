@@ -3,7 +3,7 @@ name: Diff API documentation
 on:
   pull_request_target:
     branches:
-      - testing-pull-request-target
+      - main
 
 jobs:
   public-api-diff:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Comment pull request with API diff
-        uses: paulrbr/github-action@public-diff
+        uses: bump-sh/github-action@v1
         with:
           file: openapi.yaml
           command: diff
