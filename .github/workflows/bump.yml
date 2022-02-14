@@ -36,7 +36,7 @@ jobs:
         with:
           doc: gitlab
           token: ${{secrets.BUMP_TOKEN}}
-          file: openapi.yaml
+          file: openapi2.yaml
           command: diff
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
