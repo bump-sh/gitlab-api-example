@@ -339,6 +339,8 @@ accessRequestsGroupsApprove:
                   type: string
                 email:
                   type: string
+                phone:
+                  type: string
                 state:
                   type: string
                 created_at:
